@@ -102,7 +102,7 @@ func (u *Uploader) upload(ctx context.Context, creds Credentials, filePath, objN
 
 	client, err := storage.NewClient(
 		ctx,
-		option.WithHTTPClient(u.httpClient),
+		//option.WithHTTPClient(u.httpClient), // TODO: client overrides creds. Need to build creds aware client manually
 		option.WithCredentials(clientCreds),
 	)
 	if err != nil {
